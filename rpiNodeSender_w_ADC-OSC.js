@@ -39,7 +39,7 @@ var progGainAmp = '4096'; // see index.js for allowed values for your chip
 var tempReading  = 0;
 var potReading = 0;
 
-setInterval(readADC, 20);
+setInterval(readADC, 100);
 
 function readADC(){
 //Read the second ADC pin (potentometer) with the same code:
@@ -57,7 +57,7 @@ function readADC(){
       console.log ("Raw Data Reading: " + data);
       console.log("Scaled Reading: " + potReading);
 
-
+      client.send('/oscAddress', 100);
 
       if(data<1000){
         ledRed.writeSync(1);
