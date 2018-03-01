@@ -83,12 +83,17 @@ function readADC(){
     );
   }
 
-  client.send('/oscAddress', 100, function () {
-    //client.kill();
-  });
+
 
 
 }
+
+/*
+client.send('/oscAddress', 100, function () {
+  //client.kill();
+});
+*/
+
 
 function scale(inputY,yMin,yMax,xMin,xMax){
   //courtesy of stack stackoverflow
