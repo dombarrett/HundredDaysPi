@@ -1,2 +1,6 @@
 #Ignore node module folders
 node_modules/
+
+#And Files
+.DS_Store
+package-lock.json
