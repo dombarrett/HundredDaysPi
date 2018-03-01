@@ -60,9 +60,9 @@ function readADC(){
       //console.log("Pin 1 Pot Reading: "+ data);
       //console.log("Pin 1 Temp Set: " + potReading);
 
-      client.send('/oscAddress', 200, function () {
-        client.kill();
-      });
+      //client.send('/oscAddress', 200, function () {
+        //client.kill();
+      //});
 
       if(tempReading<1000){
         ledRed.writeSync(1);
