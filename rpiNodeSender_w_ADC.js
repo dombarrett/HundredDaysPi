@@ -44,8 +44,8 @@ function readADC(){
         throw err;
       }
       // if you made it here, then the data object contains your reading!
-      potReading = scale(data,-50,3220,15,30)
-      console.log = ("Raw Data Reading: " + data)
+      potReading = scale(data,-50,3220,15,30);
+      console.log ("Raw Data Reading: " + data);
       console.log("Scaled Reading: " + potReading);
 
       if(data<1000){
