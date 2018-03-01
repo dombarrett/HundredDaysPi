@@ -57,9 +57,7 @@ function readADC(){
       console.log ("Raw Data Reading: " + data);
       console.log("Scaled Reading: " + potReading);
 
-      client.send('/oscAddress', 100, function () {
-        client.kill();
-      });
+
 
       if(data<1000){
         ledRed.writeSync(1);
@@ -79,6 +77,10 @@ function readADC(){
 
       //);
      }    // any other data processing code goes here...
+
+     client.send('/oscAddress', 100, function () {
+       client.kill();
+     });
     );
   }
 }
