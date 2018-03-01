@@ -84,7 +84,7 @@ function readADC(){
   }
 
   client.send('/oscAddress', 100, function () {
-    client.kill();
+    //client.kill();
   });
 
 
