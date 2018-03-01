@@ -45,15 +45,15 @@ function readADC(){
       }
       // if you made it here, then the data object contains your reading!
       potReading = scale(data,-50,3220,15,30)
-      //console.log("Pin 1 Pot Reading: "+ data);
-      //console.log("Pin 1 Temp Set: " + potReading);
+      console.log = ("Raw Data Reading: " + data)
+      console.log("Scaled Reading: " + potReading);
 
-      if(potReading<1000){
+      if(data<1000){
         ledRed.writeSync(1);
         ledBlue.writeSync(0);
         ledYellow.writeSync(0);
       }
-      else if(potReading>2000){
+      else if(data>2000){
         ledRed.writeSync(0);
         ledBlue.writeSync(1);
         ledYellow.writeSync(0);
