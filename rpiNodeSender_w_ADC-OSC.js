@@ -55,7 +55,7 @@ function readADC(){
         throw err;
       }
       // if you made it here, then the data object contains your reading!
-      potReading = scale(data,-50,3220,15,30);
+      potReading = scale(data,-50,3220,0,127);
       console.log ("Raw Data Reading: " + data);
       console.log("Scaled Reading: " + potReading);
 
@@ -87,7 +87,7 @@ function readADC(){
 
 
   var client = new osc.Client('128.122.6.143', 3333);
-  client.send('/oscAddress', data, function () {
+  client.send('/oscAddress', potReading, function () {
     //client.kill();
   });
 
