@@ -84,7 +84,10 @@ function readADC(){
   }
 
 
-
+  var client = new osc.Client('128.122.6.143', 3333);
+  client.send('/oscAddress', 200, function () {
+    //client.kill();
+  });
 
 }
 
