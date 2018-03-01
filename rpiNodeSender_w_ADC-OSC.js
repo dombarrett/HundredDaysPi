@@ -1,14 +1,11 @@
-//OSC
 var osc = require('node-osc');
 
-var client = new osc.Client('127.0.0.1', 3333);
-/*
-//As an example, you do this:
+//Because I'm on a specific network, I'm using my current IP oscAddress
+//If you were running this locally, you would use 127.0.0.1
+var client = new osc.Client('128.122.6.143', 3333);
 client.send('/oscAddress', 200, function () {
   client.kill();
 });
-*/
-
 
 //LEDs
 var Gpio = require('onoff').Gpio,
@@ -56,20 +53,16 @@ function readADC(){
         throw err;
       }
       // if you made it here, then the data object contains your reading!
-      potReading = scale(data,-50,3220,15,30)
-      //console.log("Pin 1 Pot Reading: "+ data);
-      //console.log("Pin 1 Temp Set: " + potReading);
+      potReading = scale(data,-50,3220,15,30);
+      console.log ("Raw Data Reading: " + data);
+      console.log("Scaled Reading: " + potReading);
 
-      //client.send('/oscAddress', 200, function () {
-        //client.kill();
-      //});
-
-      if(potReading<1000){
+      if(data<1000){
         ledRed.writeSync(1);
         ledBlue.writeSync(0);
         ledYellow.writeSync(0);
       }
-      else if(potReading>2000){
+      else if(data>2000){
         ledRed.writeSync(0);
         ledBlue.writeSync(1);
         ledYellow.writeSync(0);
