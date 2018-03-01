@@ -80,7 +80,7 @@ function readADC(){
         ledYellow.writeSync(1);
       }
 
-      );
+      //);
      }    // any other data processing code goes here...
     );
   }
