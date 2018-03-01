@@ -61,18 +61,18 @@ function readADC(){
 
       if(data<1000){
         ledRed.writeSync(0);
-        ledBlue.writeSync(0);
+        ledBlue.writeSync(1);
         ledYellow.writeSync(1);
       }
       else if(data>2000){
-        ledRed.writeSync(0);
-        ledBlue.writeSync(1);
-        ledYellow.writeSync(0);
-      }
-      else{
         ledRed.writeSync(1);
         ledBlue.writeSync(0);
         ledYellow.writeSync(0);
+      }
+      else{
+        ledRed.writeSync(0);
+        ledBlue.writeSync(0);
+        ledYellow.writeSync(1);
       }
 
       //);
