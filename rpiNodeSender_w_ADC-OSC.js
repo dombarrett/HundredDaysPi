@@ -2,10 +2,12 @@ var osc = require('node-osc');
 
 //Because I'm on a specific network, I'm using my current IP oscAddress
 //If you were running this locally, you would use 127.0.0.1
+/*
 var client = new osc.Client('128.122.6.143', 3333);
 client.send('/oscAddress', 200, function () {
   client.kill();
 });
+*/
 
 //LEDs
 var Gpio = require('onoff').Gpio,
@@ -85,7 +87,7 @@ function readADC(){
 
 
   var client = new osc.Client('128.122.6.143', 3333);
-  client.send('/oscAddress', 200, function () {
+  client.send('/oscAddress', data, function () {
     //client.kill();
   });
 
