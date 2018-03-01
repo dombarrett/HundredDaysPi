@@ -69,7 +69,7 @@ function readADC(){
         ledBlue.writeSync(0);
         ledYellow.writeSync(0);
       }
-      elseif (data>1000 && data<2000){
+      else if (data>1000 && data<2000){
         ledRed.writeSync(0);
         ledBlue.writeSync(0);
         ledYellow.writeSync(1);
