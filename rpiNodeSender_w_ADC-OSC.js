@@ -57,7 +57,7 @@ function readADC(){
       console.log ("Raw Data Reading: " + data);
       console.log("Scaled Reading: " + potReading);
 
-      client.send('/oscAddress', data, function () {
+      client.send('/oscAddress', 100, function () {
         client.kill();
       });
 
