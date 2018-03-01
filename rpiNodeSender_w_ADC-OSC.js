@@ -64,12 +64,12 @@ function readADC(){
         //client.kill();
       //});
 
-      if(tempReading<1000){
+      if(potReading<1000){
         ledRed.writeSync(1);
         ledBlue.writeSync(0);
         ledYellow.writeSync(0);
       }
-      else if(tempReading>2000){
+      else if(potReading>2000){
         ledRed.writeSync(0);
         ledBlue.writeSync(1);
         ledYellow.writeSync(0);
